@@ -5,9 +5,9 @@ import '@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol';
 
 import "./SafeMath.sol";
 
-interface SmallIUniswapV2Factory {
-    function getPair(address tokenA, address tokenB) external view returns (address pair);
-}
+//interface SmallIUniswapV2Factory {
+//    function getPair(address tokenA, address tokenB) external view returns (address pair);
+//}
 
 library UniswapV2Library {
     using SafeMath for uint;

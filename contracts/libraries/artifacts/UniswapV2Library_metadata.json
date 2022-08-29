@@ -43,10 +43,10 @@
 			]
 		},
 		"bitlime-periphery/contracts/libraries/UniswapV2Library.sol": {
-			"keccak256": "0xc3a483f485d953076ea895a293e2e4dc732c9173a1c7cdd368303e7352d0213e",
+			"keccak256": "0xc4008a05a44496a9e42ac8ea35525b5b7ce5ec7cf45bdc5cf9092b938bd945c8",
 			"urls": [
-				"bzz-raw://4f3d38dc6c0aa922448e08b1c2b0042dc05abdb77b1c4cd06fa58b716a13d761",
-				"dweb:/ipfs/QmcLyqAnTXWhw7JA1DxAufF7cJiUeXsFf9zc5FAoSHf222"
+				"bzz-raw://20caf2f374f57631c2cb51fdcdf15c417e726c173b6a3de8e1b67872d56dca83",
+				"dweb:/ipfs/QmTYCn8sJDBoN8wwzzGFsxvGVnfhoRkWhHqQHHiM4kinLw"
 			]
 		}
 	},

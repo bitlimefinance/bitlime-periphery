@@ -238,6 +238,8 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
         uint commission,  //commission set for the affiliate or by the white label dex admin
         uint isWhiteLabel //put 0 if is affiliate, 1 if is white label
     ) external virtual override ensure(deadline) returns (uint[] memory amounts) {
+
+        require(commission >= 0, "commission must be positive");
         
         uint Reward;
 
@@ -259,13 +261,11 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
             }
             
             //Calculate Affiliate Reward
-            require(commission >= 0, "commission must be positive");
             Reward = amountIn.mul(commission) / 10000;
             //Send Reward to the Affiliate
             TransferHelper.safeTransferFrom(path[0], msg.sender, userExists[msg.sender], Reward);
         } else {
             //if is white label, Send Reward to the WhiteLabel
-            require(commission >= 0, "commission must be positive");
             //Calculate WhiteLabel owner Reward
             Reward = amountIn.mul(commission) / 10000;
             //Send Reward to the WhiteLabel owner
@@ -276,7 +276,7 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
         amountIn = amountIn - Reward;
         
         //Applica le commissioni anche in getAmountsOut mettendo gli stessi parametri, cosi da preventivare il giusto ammontare
-
+        
 
         amounts = UniswapV2Library.getAmountsOut(factory, amountIn, path);
         require(amounts[amounts.length - 1] >= amountOutMin, 'UniswapV2Router: INSUFFICIENT_OUTPUT_AMOUNT');
@@ -284,6 +284,7 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
             path[0], msg.sender, UniswapV2Library.pairFor(factory, path[0], path[1]), amounts[0]
         );
         _swap(amounts, path, to);
+        
     }
     function swapTokensForExactTokens(
         uint amountOut,
