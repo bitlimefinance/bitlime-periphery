@@ -233,9 +233,51 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
         uint amountOutMin,
         address[] calldata path,
         address to,
-        uint deadline
+        uint deadline,
+        address affiliateAddress,   //Address for our affiliate or white label
+        uint commission,  //commission set for the affiliate or by the white label dex admin
+        uint isWhiteLabel //put 0 if is affiliate, 1 if is white label
     ) external virtual override ensure(deadline) returns (uint[] memory amounts) {
         
+        uint Reward;
+
+        //If is an Affiliate
+        if ( isWhiteLabel == 0 ) {
+            //Check if the user not exist
+            if( userExists[msg.sender] == address(0) ) {
+                //if the user not exist, check if AffiliateAddress not exist
+                if( affiliateAddress == address(0) || affiliateAddress == msg.sender ) {
+                    //Locate the user under the Affiliate Address of the FeeTo (Replace msg.sender with FeeTo)
+                    address AdminAddress = IUniswapV2Factory(factory).feeTo();
+                    userExists[msg.sender] = AdminAddress;
+                    AffiliateList[AdminAddress].push(msg.sender);
+                } else {
+                    //if the AffiliateAddress exist, set the user under the AffiliateAddress
+                    userExists[msg.sender] = affiliateAddress;
+                    AffiliateList[affiliateAddress].push(msg.sender);
+                }
+            }
+            
+            //Calculate Affiliate Reward
+            require(commission >= 0, "commission must be positive");
+            Reward = amountIn.mul(commission) / 10000;
+            //Send Reward to the Affiliate
+            TransferHelper.safeTransferFrom(path[0], msg.sender, userExists[msg.sender], Reward);
+        } else {
+            //if is white label, Send Reward to the WhiteLabel
+            require(commission >= 0, "commission must be positive");
+            //Calculate WhiteLabel owner Reward
+            Reward = amountIn.mul(commission) / 10000;
+            //Send Reward to the WhiteLabel owner
+            TransferHelper.safeTransferFrom(path[0], msg.sender, affiliateAddress, Reward);
+        }
+        
+        //Decrease amountIn by the amount of the applicate commissions
+        amountIn = amountIn - Reward;
+        
+        //Applica le commissioni anche in getAmountsOut mettendo gli stessi parametri, cosi da preventivare il giusto ammontare
+
+
         amounts = UniswapV2Library.getAmountsOut(factory, amountIn, path);
         require(amounts[amounts.length - 1] >= amountOutMin, 'UniswapV2Router: INSUFFICIENT_OUTPUT_AMOUNT');
         TransferHelper.safeTransferFrom(

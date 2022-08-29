@@ -832,6 +832,21 @@
 						"internalType": "uint256",
 						"name": "deadline",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "AffiliateAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "WhiteLabelCommission",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "IsWhiteLabel",
+						"type": "uint256"
 					}
 				],
 				"name": "swapExactTokensForTokens",
@@ -981,10 +996,10 @@
 	},
 	"sources": {
 		"bitlime-periphery/contracts/interfaces/IUniswapV2Router01.sol": {
-			"keccak256": "0x608b42c9eb8629e4b4b2fba437c62be48cee8ab920bf1cecb0b212aa00342403",
+			"keccak256": "0x250886d7e60cf84f579ef81d92ee88af731fed1340f82e0ad8c75bf017f45422",
 			"urls": [
-				"bzz-raw://c9a7613abdbf51b774b4c90a043c55d5c9145121d54d2e6bd32cdc38491e9249",
-				"dweb:/ipfs/QmUudeJSPyuqm6bJWmfqtvo7jMYfa8yqPKF1p8eP8QE5cX"
+				"bzz-raw://8db57d14616e8b35729ccd2f4070787a27c03f03092edd3b7c607a9570409e7c",
+				"dweb:/ipfs/QmRe1WFPu5rgjL36VwADesu7xMJAoydEmTKHP6XGfDqhtX"
 			]
 		},
 		"bitlime-periphery/contracts/interfaces/IUniswapV2Router02.sol": {

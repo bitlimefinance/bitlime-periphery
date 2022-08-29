@@ -65,7 +65,7 @@
 			"swapExactETHForTokensSupportingFeeOnTransferTokens(uint256,address[],address,uint256)": "b6f9de95",
 			"swapExactTokensForETH(uint256,uint256,address[],address,uint256)": "18cbafe5",
 			"swapExactTokensForETHSupportingFeeOnTransferTokens(uint256,uint256,address[],address,uint256)": "791ac947",
-			"swapExactTokensForTokens(uint256,uint256,address[],address,uint256)": "38ed1739",
+			"swapExactTokensForTokens(uint256,uint256,address[],address,uint256,address,uint256,uint256)": "b9f23c03",
 			"swapExactTokensForTokensSupportingFeeOnTransferTokens(uint256,uint256,address[],address,uint256)": "5c11d795",
 			"swapTokensForExactETH(uint256,uint256,address[],address,uint256)": "4a25d94a",
 			"swapTokensForExactTokens(uint256,uint256,address[],address,uint256)": "8803dbee"
@@ -898,6 +898,21 @@
 				{
 					"internalType": "uint256",
 					"name": "deadline",
+					"type": "uint256"
+				},
+				{
+					"internalType": "address",
+					"name": "AffiliateAddress",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "WhiteLabelCommission",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "IsWhiteLabel",
 					"type": "uint256"
 				}
 			],
