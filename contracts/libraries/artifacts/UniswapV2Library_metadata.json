@@ -14,7 +14,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"v2-periphery-master/contracts/libraries/UniswapV2Library.sol": "UniswapV2Library"
+			"bitlime-periphery/contracts/libraries/UniswapV2Library.sol": "UniswapV2Library"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -35,18 +35,18 @@
 				"dweb:/ipfs/QmayKQWJgWmr46DqWseADyUanmqxh662hPNdAkdHRjiQQH"
 			]
 		},
-		"v2-periphery-master/contracts/libraries/SafeMath.sol": {
+		"bitlime-periphery/contracts/libraries/SafeMath.sol": {
 			"keccak256": "0x977f38b601109ee7a0c1b70a32e08b7aecf5b4672bdea39fa6b7fec810943b80",
 			"urls": [
 				"bzz-raw://50296b94e299cd690f4a7966a93ac6ac58128080b0a14fdb1c2e07d71b50930c",
 				"dweb:/ipfs/QmSCqtcNbmcXUekQk2NYGDQcWt34sASe6ru1v2FLBX9coc"
 			]
 		},
-		"v2-periphery-master/contracts/libraries/UniswapV2Library.sol": {
-			"keccak256": "0x79f5eefc4f071907e0650c154248f62f2617a2f19240a1d48b9c81bffc040613",
+		"bitlime-periphery/contracts/libraries/UniswapV2Library.sol": {
+			"keccak256": "0xc3a483f485d953076ea895a293e2e4dc732c9173a1c7cdd368303e7352d0213e",
 			"urls": [
-				"bzz-raw://23a9992f9b6173ecb9d122791875f837978183dc86b091696280a527d0601a1e",
-				"dweb:/ipfs/QmSKzHgiVP43mVkSBRqvrpoQ7BE98jgz6uH1iarxpbFNvH"
+				"bzz-raw://4f3d38dc6c0aa922448e08b1c2b0042dc05abdb77b1c4cd06fa58b716a13d761",
+				"dweb:/ipfs/QmcLyqAnTXWhw7JA1DxAufF7cJiUeXsFf9zc5FAoSHf222"
 			]
 		}
 	},

@@ -299,7 +299,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"v2-periphery-master/contracts/WETH.sol": "WETH"
+			"bitlime-periphery/contracts/WETH.sol": "WETH"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -313,7 +313,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"v2-periphery-master/contracts/WETH.sol": {
+		"bitlime-periphery/contracts/WETH.sol": {
 			"keccak256": "0xad33cbddc66c8bc8c153bdb2ce37e99f2cbfad0ff82e9af3b1ad5380a03f2470",
 			"urls": [
 				"bzz-raw://e427a7065841cabdd552f9a412054d7d878bdfa9d33955d645eda7945d93bf97",
