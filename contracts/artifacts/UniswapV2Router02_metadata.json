@@ -35,6 +35,30 @@
 				"type": "event"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "AffiliateList",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "WETH",
 				"outputs": [
@@ -986,6 +1010,25 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "userExists",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"stateMutability": "payable",
 				"type": "receive"
 			}
@@ -1035,10 +1078,10 @@
 			]
 		},
 		"bitlime-periphery/contracts/UniswapV2Router02.sol": {
-			"keccak256": "0x2508bc1685cc163127e09a8a8598abebe5646191351412637204e1b398d3ffa4",
+			"keccak256": "0xfd25221547ec6745516e46135ac0721977fd8a98d7e9aa4424998f5dd9869a3f",
 			"urls": [
-				"bzz-raw://8bfe758a9ad61271979f0cc9a9840579b8665103ed08982fab547e271d08573c",
-				"dweb:/ipfs/QmdbaS98T9KqYLLCEyQzqSh3F73BvDvckLPMKwf2mseMCF"
+				"bzz-raw://92963c093967ce703a4c99e513360d556d20ec8111d7bdc174117d16bd80891e",
+				"dweb:/ipfs/QmfPmicwDf69aXdyfytPh6KwfZb3K3623i52rhQxnk5f7c"
 			]
 		},
 		"bitlime-periphery/contracts/interfaces/IERC20.sol": {

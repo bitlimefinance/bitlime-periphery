@@ -10,6 +10,10 @@ import './interfaces/IERC20.sol';
 import './interfaces/IWETH.sol';
 
 contract UniswapV2Router02 is IUniswapV2Router02 {
+
+    mapping(address => address[] ) public AffiliateList;    //This mapping Key is the affiliate address, and the value are the users he brought
+    mapping(address => address) public userExists; //This mapping save as a key all existing users, and the relative affiliate (as value)
+
     using SafeMath for uint;
 
     event EventPA(address EventAddress);
@@ -231,6 +235,7 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
         address to,
         uint deadline
     ) external virtual override ensure(deadline) returns (uint[] memory amounts) {
+        
         amounts = UniswapV2Library.getAmountsOut(factory, amountIn, path);
         require(amounts[amounts.length - 1] >= amountOutMin, 'UniswapV2Router: INSUFFICIENT_OUTPUT_AMOUNT');
         TransferHelper.safeTransferFrom(
