@@ -747,6 +747,24 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "newWhiteLabelCommission",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "whiteLabelAddress",
+						"type": "address"
+					}
+				],
+				"name": "setWhiteLabelCommission",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "amountOut",
 						"type": "uint256"
 					},
@@ -798,6 +816,11 @@
 						"internalType": "uint256",
 						"name": "deadline",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "affiliateAddress",
+						"type": "address"
 					}
 				],
 				"name": "swapExactETHForTokens",
@@ -832,6 +855,11 @@
 						"internalType": "uint256",
 						"name": "deadline",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "affiliateAddress",
+						"type": "address"
 					}
 				],
 				"name": "swapExactETHForTokensSupportingFeeOnTransferTokens",
@@ -865,6 +893,11 @@
 						"internalType": "uint256",
 						"name": "deadline",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "affiliateAddress",
+						"type": "address"
 					}
 				],
 				"name": "swapExactTokensForETH",
@@ -904,6 +937,11 @@
 						"internalType": "uint256",
 						"name": "deadline",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "affiliateAddress",
+						"type": "address"
 					}
 				],
 				"name": "swapExactTokensForETHSupportingFeeOnTransferTokens",
@@ -981,6 +1019,11 @@
 						"internalType": "uint256",
 						"name": "deadline",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "affiliateAddress",
+						"type": "address"
 					}
 				],
 				"name": "swapExactTokensForTokensSupportingFeeOnTransferTokens",
@@ -1167,10 +1210,10 @@
 			]
 		},
 		"bitlime-periphery/contracts/UniswapV2Router02.sol": {
-			"keccak256": "0x9b92a24a354635afd6ff59d3ab243bc777c5d2194048d2a3f683765142498f0f",
+			"keccak256": "0x795ce0f913e113dafe118b0d5318a2675508fc59afbf3ca034c85566ff8f011b",
 			"urls": [
-				"bzz-raw://c05d1f3e516c7c57c64186cc039f832a4eff18510883d7f700056f25fb238b06",
-				"dweb:/ipfs/QmX1FfLciNu7LFxe72ZR88w4FVfd5a7DxdQx4bp4nxNgen"
+				"bzz-raw://29a6d5a4edfa374066e907f3459ced61d28a467e5e1a609f723eda8fcc3f329e",
+				"dweb:/ipfs/QmPGpBTfgJviJcdQ3HRUsApvu66vHw5PLLe8XG4oDYpsqn"
 			]
 		},
 		"bitlime-periphery/contracts/interfaces/IERC20.sol": {
@@ -1181,17 +1224,17 @@
 			]
 		},
 		"bitlime-periphery/contracts/interfaces/IUniswapV2Router01.sol": {
-			"keccak256": "0x738b2c53dd63f78f8974c45919a9baabbd9bd80de4659dbe287fee859a8dc150",
+			"keccak256": "0xa9575c9099d0c0cade1071e699f51eb0a652708a9e729e5882f0aaf46d96a602",
 			"urls": [
-				"bzz-raw://1f771e2f42496d8b85e9fcdacf3b4913af5cd2b486a312cfc6240eb96e83653a",
-				"dweb:/ipfs/QmZvzDap2CQyRqrTtYzPGPCVUavHW6xWktj9grJLgDcS7X"
+				"bzz-raw://1b4a58a5a21dc7dd4c4ec8f6f4c681afcb0bad85b7c693f2c80da7b6aaf960f5",
+				"dweb:/ipfs/QmYo77KxQytYtDbZT44xD4tMUJ1qrc7ZE6gnssw8GzrfkY"
 			]
 		},
 		"bitlime-periphery/contracts/interfaces/IUniswapV2Router02.sol": {
-			"keccak256": "0x6cd3e8353cad3bda963bf27bd2f7d1846e33ea5fb569251eaacf69fe3de58055",
+			"keccak256": "0x26082ac997a152860635ce5e389bcd932e40189ad49f7ea7b6a31dc9095c7cf4",
 			"urls": [
-				"bzz-raw://fa399899084741c732a5515ca965b8557ffa16a38e86cf5dede3007f1bb430c4",
-				"dweb:/ipfs/QmPcp3YMPf7tbDZp66qykWoZj7yPy7hMLXAYbwTqHaRWn6"
+				"bzz-raw://1b197adf72b1e729b1fe88b7d0adfcb796eb90270470ccb5983bb703b29a4cee",
+				"dweb:/ipfs/QmRMn2H1kFrS5q2dZxaT18Vc22bT1Lfd6bXEvdCNVBZoVH"
 			]
 		},
 		"bitlime-periphery/contracts/interfaces/IWETH.sol": {

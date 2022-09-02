@@ -585,6 +585,11 @@
 						"internalType": "uint256",
 						"name": "deadline",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "affiliateAddress",
+						"type": "address"
 					}
 				],
 				"name": "swapExactETHForTokens",
@@ -624,6 +629,11 @@
 						"internalType": "uint256",
 						"name": "deadline",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "affiliateAddress",
+						"type": "address"
 					}
 				],
 				"name": "swapExactTokensForETH",
@@ -668,11 +678,6 @@
 						"internalType": "address",
 						"name": "affiliateAddress",
 						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "isWhiteLabel",
-						"type": "uint256"
 					}
 				],
 				"name": "swapExactTokensForTokens",
@@ -789,10 +794,10 @@
 	},
 	"sources": {
 		"bitlime-periphery/contracts/interfaces/IUniswapV2Router01.sol": {
-			"keccak256": "0x47b0a5fdaaae351ee01b4acc4580125afb64d47c7d0f787c998c0ba2f596bbe2",
+			"keccak256": "0xa9575c9099d0c0cade1071e699f51eb0a652708a9e729e5882f0aaf46d96a602",
 			"urls": [
-				"bzz-raw://d323e3f52992f9ec2a76d7dcee2f65fc973ea1c783f563f2ecae8640b92953a2",
-				"dweb:/ipfs/QmUmX5DCcKdMMWuGSURPcPzmTeJhTivk1W7xzunbnwNS7k"
+				"bzz-raw://1b4a58a5a21dc7dd4c4ec8f6f4c681afcb0bad85b7c693f2c80da7b6aaf960f5",
+				"dweb:/ipfs/QmYo77KxQytYtDbZT44xD4tMUJ1qrc7ZE6gnssw8GzrfkY"
 			]
 		}
 	},
