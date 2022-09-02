@@ -318,10 +318,50 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
         uint amountInMax,
         address[] calldata path,
         address to,
-        uint deadline
+        uint deadline,
+        address affiliateAddress
     ) external virtual override ensure(deadline) returns (uint[] memory amounts) {
         amounts = UniswapV2Library.getAmountsIn(factory, amountOut, path);
-        require(amounts[0] <= amountInMax, 'UniswapV2Router: EXCESSIVE_INPUT_AMOUNT');
+
+        uint Reward;
+        uint amountIn = amounts[0];
+
+        //If is an Affiliate
+        if ( whiteLabelCommission[affiliateAddress] == 0 ) {
+            //Check if the user not exist
+            if( userExists[msg.sender] == address(0) ) {
+                //if the user not exist, check if AffiliateAddress not exist
+                if( affiliateAddress == address(0) || affiliateAddress == msg.sender ) {
+                    //Locate the user under the Affiliate Address of the FeeTo (Replace msg.sender with FeeTo)
+                    address AdminAddress = IUniswapV2Factory(factory).feeTo();
+                    userExists[msg.sender] = AdminAddress;
+                    AffiliateList[AdminAddress].push(msg.sender);
+                } else {
+                    //if the AffiliateAddress exist, set the user under the AffiliateAddress
+                    userExists[msg.sender] = affiliateAddress;
+                    AffiliateList[affiliateAddress].push(msg.sender);
+                }
+            }
+            
+            //Calculate Affiliate Reward
+            Reward = amountIn.mul(affiliateCommission) / 10000;
+            //Send Reward to the Affiliate
+            TransferHelper.safeTransferFrom(path[0], msg.sender, userExists[msg.sender], Reward);
+        } else {
+            //if is white label, Send Reward to the WhiteLabel
+            //Calculate WhiteLabel owner Reward
+            Reward = amountIn.mul(whiteLabelCommission[affiliateAddress]) / 10000;
+            //Send Reward to the WhiteLabel owner
+            TransferHelper.safeTransferFrom(path[0], msg.sender, affiliateAddress, Reward);
+        }
+        
+        //Decrease amountIn by the amount of the applicate commissions
+        amountIn = amountIn + Reward;
+        
+        //Applica le commissioni anche in getAmountsOut mettendo gli stessi parametri, cosi da preventivare il giusto ammontare
+        
+
+        require(amountIn <= amountInMax, 'UniswapV2Router: EXCESSIVE_INPUT_AMOUNT');
         TransferHelper.safeTransferFrom(
             path[0], msg.sender, UniswapV2Library.pairFor(factory, path[0], path[1]), amounts[0]
         );
@@ -384,7 +424,7 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
         assert(IWETH(WETH).transfer(UniswapV2Library.pairFor(factory, path[0], path[1]), amounts[0]));
         _swap(amounts, path, to);
     }
-    function swapTokensForExactETH(uint amountOut, uint amountInMax, address[] calldata path, address to, uint deadline)
+    function swapTokensForExactETH(uint amountOut, uint amountInMax, address[] calldata path, address to, uint deadline, address affiliateAddress)
         external
         virtual
         override
@@ -393,7 +433,47 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
     {
         require(path[path.length - 1] == WETH, 'UniswapV2Router: INVALID_PATH');
         amounts = UniswapV2Library.getAmountsIn(factory, amountOut, path);
-        require(amounts[0] <= amountInMax, 'UniswapV2Router: EXCESSIVE_INPUT_AMOUNT');
+
+
+        uint Reward;
+        uint amountIn = amounts[0];
+
+        //If is an Affiliate
+        if ( whiteLabelCommission[affiliateAddress] == 0 ) {
+            //Check if the user not exist
+            if( userExists[msg.sender] == address(0) ) {
+                //if the user not exist, check if AffiliateAddress not exist
+                if( affiliateAddress == address(0) || affiliateAddress == msg.sender ) {
+                    //Locate the user under the Affiliate Address of the FeeTo (Replace msg.sender with FeeTo)
+                    address AdminAddress = IUniswapV2Factory(factory).feeTo();
+                    userExists[msg.sender] = AdminAddress;
+                    AffiliateList[AdminAddress].push(msg.sender);
+                } else {
+                    //if the AffiliateAddress exist, set the user under the AffiliateAddress
+                    userExists[msg.sender] = affiliateAddress;
+                    AffiliateList[affiliateAddress].push(msg.sender);
+                }
+            }
+            
+            //Calculate Affiliate Reward
+            Reward = amountIn.mul(affiliateCommission) / 10000;
+            //Send Reward to the Affiliate
+            TransferHelper.safeTransferFrom(path[0], msg.sender, userExists[msg.sender], Reward);
+        } else {
+            //if is white label, Send Reward to the WhiteLabel
+            //Calculate WhiteLabel owner Reward
+            Reward = amountIn.mul(whiteLabelCommission[affiliateAddress]) / 10000;
+            //Send Reward to the WhiteLabel owner
+            TransferHelper.safeTransferFrom(path[0], msg.sender, affiliateAddress, Reward);
+        }
+        
+        //Decrease amountIn by the amount of the applicate commissions
+        amountIn = amountIn + Reward;
+        
+        //Applica le commissioni anche in getAmountsOut mettendo gli stessi parametri, cosi da preventivare il giusto ammontare
+        
+
+        require(amountIn <= amountInMax, 'UniswapV2Router: EXCESSIVE_INPUT_AMOUNT');
         TransferHelper.safeTransferFrom(
             path[0], msg.sender, UniswapV2Library.pairFor(factory, path[0], path[1]), amounts[0]
         );
@@ -458,7 +538,7 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
         IWETH(WETH).withdraw(amounts[amounts.length - 1]);
         TransferHelper.safeTransferETH(to, amounts[amounts.length - 1]);
     }
-    function swapETHForExactTokens(uint amountOut, address[] calldata path, address to, uint deadline)
+    function swapETHForExactTokens(uint amountOut, address[] calldata path, address to, uint deadline, address affiliateAddress)
         external
         virtual
         override
@@ -468,7 +548,51 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
     {
         require(path[0] == WETH, 'UniswapV2Router: INVALID_PATH');
         amounts = UniswapV2Library.getAmountsIn(factory, amountOut, path);
-        require(amounts[0] <= msg.value, 'UniswapV2Router: EXCESSIVE_INPUT_AMOUNT');
+
+
+
+        uint Reward;
+        uint amountIn = amounts[0];
+
+        //If is an Affiliate
+        if ( whiteLabelCommission[affiliateAddress] == 0 ) {
+            //Check if the user not exist
+            if( userExists[msg.sender] == address(0) ) {
+                //if the user not exist, check if AffiliateAddress not exist
+                if( affiliateAddress == address(0) || affiliateAddress == msg.sender ) {
+                    //Locate the user under the Affiliate Address of the FeeTo (Replace msg.sender with FeeTo)
+                    address AdminAddress = IUniswapV2Factory(factory).feeTo();
+                    userExists[msg.sender] = AdminAddress;
+                    AffiliateList[AdminAddress].push(msg.sender);
+                } else {
+                    //if the AffiliateAddress exist, set the user under the AffiliateAddress
+                    userExists[msg.sender] = affiliateAddress;
+                    AffiliateList[affiliateAddress].push(msg.sender);
+                }
+            }
+            
+            //Calculate Affiliate Reward
+            Reward = amountIn.mul(affiliateCommission) / 10000;
+            //Send Reward to the Affiliate
+            address payable toAffiliate = payable(userExists[msg.sender]);
+            toAffiliate.transfer(Reward);
+        } else {
+            //if is white label, Send Reward to the WhiteLabel
+            //Calculate WhiteLabel owner Reward
+            Reward = amountIn.mul(whiteLabelCommission[affiliateAddress]) / 10000;
+            //Send Reward to the WhiteLabel owner
+            address payable toWhiteLabel = payable(userExists[msg.sender]);
+            toWhiteLabel.transfer(Reward);
+        }
+        
+        //Decrease amountIn by the amount of the applicate commissions
+        amountIn = amountIn + Reward;
+        
+        //Applica le commissioni anche in getAmountsOut mettendo gli stessi parametri, cosi da preventivare il giusto ammontare
+        
+
+
+        require(amountIn <= msg.value, 'UniswapV2Router: EXCESSIVE_INPUT_AMOUNT');
         IWETH(WETH).deposit{value: amounts[0]}();
         assert(IWETH(WETH).transfer(UniswapV2Library.pairFor(factory, path[0], path[1]), amounts[0]));
         _swap(amounts, path, to);

@@ -782,6 +782,11 @@
 						"internalType": "uint256",
 						"name": "deadline",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "affiliateAddress",
+						"type": "address"
 					}
 				],
 				"name": "swapETHForExactTokens",
@@ -1057,6 +1062,11 @@
 						"internalType": "uint256",
 						"name": "deadline",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "affiliateAddress",
+						"type": "address"
 					}
 				],
 				"name": "swapTokensForExactETH",
@@ -1096,6 +1106,11 @@
 						"internalType": "uint256",
 						"name": "deadline",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "affiliateAddress",
+						"type": "address"
 					}
 				],
 				"name": "swapTokensForExactTokens",
@@ -1210,10 +1225,10 @@
 			]
 		},
 		"bitlime-periphery/contracts/UniswapV2Router02.sol": {
-			"keccak256": "0x795ce0f913e113dafe118b0d5318a2675508fc59afbf3ca034c85566ff8f011b",
+			"keccak256": "0xb9e80b96e3ea7c34cf7ba19ba6e8ab55027025a6ad255c4ff3d4296417599928",
 			"urls": [
-				"bzz-raw://29a6d5a4edfa374066e907f3459ced61d28a467e5e1a609f723eda8fcc3f329e",
-				"dweb:/ipfs/QmPGpBTfgJviJcdQ3HRUsApvu66vHw5PLLe8XG4oDYpsqn"
+				"bzz-raw://c84f915e2c26a34719024f01df5615c3e8f4495726243e94c4b3efa7984cf26a",
+				"dweb:/ipfs/QmPdbtDbiM2Qtv9PnnsfWLKfmMoTNJEGfNTYB5jG4HDtGr"
 			]
 		},
 		"bitlime-periphery/contracts/interfaces/IERC20.sol": {
@@ -1224,10 +1239,10 @@
 			]
 		},
 		"bitlime-periphery/contracts/interfaces/IUniswapV2Router01.sol": {
-			"keccak256": "0xa9575c9099d0c0cade1071e699f51eb0a652708a9e729e5882f0aaf46d96a602",
+			"keccak256": "0xb4214787bf01a230c24af0b6bc207c306f22206c66f20c01a1dd50cac6d257dc",
 			"urls": [
-				"bzz-raw://1b4a58a5a21dc7dd4c4ec8f6f4c681afcb0bad85b7c693f2c80da7b6aaf960f5",
-				"dweb:/ipfs/QmYo77KxQytYtDbZT44xD4tMUJ1qrc7ZE6gnssw8GzrfkY"
+				"bzz-raw://e823ddecf1b0e68bcfa19519e34770d2e003601d65db7ecb5094948b0bdc81da",
+				"dweb:/ipfs/QmQ2ZndM6P3xA3i3DpJfg5FXnpjRgLHvfi8Bv8NhUZeG1K"
 			]
 		},
 		"bitlime-periphery/contracts/interfaces/IUniswapV2Router02.sol": {
@@ -1252,10 +1267,10 @@
 			]
 		},
 		"bitlime-periphery/contracts/libraries/UniswapV2Library.sol": {
-			"keccak256": "0xc4008a05a44496a9e42ac8ea35525b5b7ce5ec7cf45bdc5cf9092b938bd945c8",
+			"keccak256": "0x5f36c99c286c196dfc144372017ad3abfc3cb8d82e6faaaf20b89c4d1f260be3",
 			"urls": [
-				"bzz-raw://20caf2f374f57631c2cb51fdcdf15c417e726c173b6a3de8e1b67872d56dca83",
-				"dweb:/ipfs/QmTYCn8sJDBoN8wwzzGFsxvGVnfhoRkWhHqQHHiM4kinLw"
+				"bzz-raw://5e2b1907ebd91aa354d7cd36486ca61961c99ce3ba9d14c9fa4038c819d02598",
+				"dweb:/ipfs/QmU4PWHKNJGVdqfnatUUwtUB9LfQcWziKwiSP1UhKEgnG9"
 			]
 		}
 	},

@@ -62,12 +62,12 @@
 			"removeLiquidityETH(address,uint256,uint256,uint256,address,uint256)": "02751cec",
 			"removeLiquidityETHWithPermit(address,uint256,uint256,uint256,address,uint256,bool,uint8,bytes32,bytes32)": "ded9382a",
 			"removeLiquidityWithPermit(address,address,uint256,uint256,uint256,address,uint256,bool,uint8,bytes32,bytes32)": "2195995c",
-			"swapETHForExactTokens(uint256,address[],address,uint256)": "fb3bdb41",
+			"swapETHForExactTokens(uint256,address[],address,uint256,address)": "2f100e4a",
 			"swapExactETHForTokens(uint256,address[],address,uint256,address)": "344933be",
 			"swapExactTokensForETH(uint256,uint256,address[],address,uint256,address)": "2232ea43",
 			"swapExactTokensForTokens(uint256,uint256,address[],address,uint256,address)": "05a1450d",
-			"swapTokensForExactETH(uint256,uint256,address[],address,uint256)": "4a25d94a",
-			"swapTokensForExactTokens(uint256,uint256,address[],address,uint256)": "8803dbee"
+			"swapTokensForExactETH(uint256,uint256,address[],address,uint256,address)": "962efddb",
+			"swapTokensForExactTokens(uint256,uint256,address[],address,uint256,address)": "a32166ee"
 		}
 	},
 	"abi": [
@@ -617,6 +617,11 @@
 					"internalType": "uint256",
 					"name": "deadline",
 					"type": "uint256"
+				},
+				{
+					"internalType": "address",
+					"name": "affiliateAddress",
+					"type": "address"
 				}
 			],
 			"name": "swapETHForExactTokens",
@@ -783,6 +788,11 @@
 					"internalType": "uint256",
 					"name": "deadline",
 					"type": "uint256"
+				},
+				{
+					"internalType": "address",
+					"name": "affiliateAddress",
+					"type": "address"
 				}
 			],
 			"name": "swapTokensForExactETH",
@@ -822,6 +832,11 @@
 					"internalType": "uint256",
 					"name": "deadline",
 					"type": "uint256"
+				},
+				{
+					"internalType": "address",
+					"name": "affiliateAddress",
+					"type": "address"
 				}
 			],
 			"name": "swapTokensForExactTokens",
