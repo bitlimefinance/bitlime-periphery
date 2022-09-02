@@ -671,11 +671,6 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "commission",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
 						"name": "isWhiteLabel",
 						"type": "uint256"
 					}
@@ -794,10 +789,10 @@
 	},
 	"sources": {
 		"bitlime-periphery/contracts/interfaces/IUniswapV2Router01.sol": {
-			"keccak256": "0xd5b7197fd84fbb59090bbcf99b4934e5f3c0b3fc9ccef0df0265677ebad8e81f",
+			"keccak256": "0x47b0a5fdaaae351ee01b4acc4580125afb64d47c7d0f787c998c0ba2f596bbe2",
 			"urls": [
-				"bzz-raw://276bf48da3b6f38a8ec2fdacf65c10aac571406916a6d7b733d736ef50726ea7",
-				"dweb:/ipfs/QmdrZKSNGdhpDyj1N4yoTc9wGLuuWc8Smj3mvpQhabriKW"
+				"bzz-raw://d323e3f52992f9ec2a76d7dcee2f65fc973ea1c783f563f2ecae8640b92953a2",
+				"dweb:/ipfs/QmUmX5DCcKdMMWuGSURPcPzmTeJhTivk1W7xzunbnwNS7k"
 			]
 		}
 	},

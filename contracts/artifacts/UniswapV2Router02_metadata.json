@@ -191,6 +191,19 @@
 			},
 			{
 				"inputs": [],
+				"name": "affiliateCommission",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "factory",
 				"outputs": [
 					{
@@ -303,6 +316,19 @@
 						"internalType": "uint256[]",
 						"name": "amounts",
 						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -695,6 +721,32 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "newAffiliateCommission",
+						"type": "uint256"
+					}
+				],
+				"name": "setAffiliateCommission",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newWhiteLabelCommission",
+						"type": "uint256"
+					}
+				],
+				"name": "setWhiteLabelCommission",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "amountOut",
 						"type": "uint256"
 					},
@@ -890,16 +942,6 @@
 						"internalType": "address",
 						"name": "affiliateAddress",
 						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "commission",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "isWhiteLabel",
-						"type": "uint256"
 					}
 				],
 				"name": "swapExactTokensForTokens",
@@ -1028,6 +1070,19 @@
 				"inputs": [
 					{
 						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
 						"name": "",
 						"type": "address"
 					}
@@ -1038,6 +1093,25 @@
 						"internalType": "address",
 						"name": "",
 						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "whiteLabelCommission",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -1093,10 +1167,10 @@
 			]
 		},
 		"bitlime-periphery/contracts/UniswapV2Router02.sol": {
-			"keccak256": "0xe0bfd77cd92bde7b451b364cfec460e1814a5f94611a1a8fa5645408b0468cab",
+			"keccak256": "0x9b92a24a354635afd6ff59d3ab243bc777c5d2194048d2a3f683765142498f0f",
 			"urls": [
-				"bzz-raw://48558ada63e2a696839f9d22889a00e23074dc5de047e6d8a8560ca607f16dce",
-				"dweb:/ipfs/Qmdku8DjKox26PeFa3VMrFv8DdK3aVg6W8oZ5HMbUpRhed"
+				"bzz-raw://c05d1f3e516c7c57c64186cc039f832a4eff18510883d7f700056f25fb238b06",
+				"dweb:/ipfs/QmX1FfLciNu7LFxe72ZR88w4FVfd5a7DxdQx4bp4nxNgen"
 			]
 		},
 		"bitlime-periphery/contracts/interfaces/IERC20.sol": {
@@ -1107,10 +1181,10 @@
 			]
 		},
 		"bitlime-periphery/contracts/interfaces/IUniswapV2Router01.sol": {
-			"keccak256": "0x9a4333615c2d87e78540944289f410567a219e65a01e3b464cff3cebe3b2db14",
+			"keccak256": "0x738b2c53dd63f78f8974c45919a9baabbd9bd80de4659dbe287fee859a8dc150",
 			"urls": [
-				"bzz-raw://dafeebd8501d3cea940b6535449e945e43dad521191012a26195e6efdf2a0701",
-				"dweb:/ipfs/QmSebX8ct4GgQdAE6an86i9wPw1vTyatEEdmMRzeudeYzr"
+				"bzz-raw://1f771e2f42496d8b85e9fcdacf3b4913af5cd2b486a312cfc6240eb96e83653a",
+				"dweb:/ipfs/QmZvzDap2CQyRqrTtYzPGPCVUavHW6xWktj9grJLgDcS7X"
 			]
 		},
 		"bitlime-periphery/contracts/interfaces/IUniswapV2Router02.sol": {

@@ -64,9 +64,7 @@ interface IUniswapV2Router01 {
         address[] calldata path,
         address to,
         uint deadline,
-        address affiliateAddress,   //Address for our affiliate or white label
-        uint commission,  //commission set for the affiliate or by the white label dex admin
-        uint isWhiteLabel //put 0 if is affiliate, 1 if is white label
+        address affiliateAddress   //Address for our affiliate or white label
     ) external returns (uint[] memory amounts);
     function swapTokensForExactTokens(
         uint amountOut,

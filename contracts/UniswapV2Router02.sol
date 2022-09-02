@@ -13,6 +13,10 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
 
     mapping(address => address[] ) public AffiliateList;    //This mapping Key is the affiliate address, and the value are the users he brought
     mapping(address => address) public userExists; //This mapping save as a key all existing users, and the relative affiliate (as value)
+    address public owner;
+    uint public affiliateCommission; //commission set for the affiliate
+    mapping(address => uint) public whiteLabelCommission; //commission set by the white label dex admin
+
 
     using SafeMath for uint;
 
@@ -29,10 +33,30 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
     constructor(address _factory, address _WETH) public {
         factory = _factory;
         WETH = _WETH;
+        owner = msg.sender;
+        affiliateCommission = 5;
     }
 
     receive() external payable {
         assert(msg.sender == WETH); // only accept ETH via fallback from the WETH contract
+    }
+
+    //Recommended value is 5
+    function setWhiteLabelCommission(uint newWhiteLabelCommission) public {
+        require(newWhiteLabelCommission >= 0, "commission must be positive");
+        require(newWhiteLabelCommission <= 1000, "this commission is too high");
+        whiteLabelCommission[msg.sender] = newWhiteLabelCommission;
+    }
+
+    function setAffiliateCommission(uint newAffiliateCommission) public {
+        require(owner == msg.sender, "Caller is not the owner");
+        require(newAffiliateCommission >= 0, "commission must be positive");
+        affiliateCommission = newAffiliateCommission;
+    }
+
+    function transferOwnership(address newOwner) public {
+        require(owner == msg.sender, "Caller is not the owner");
+        owner = newOwner;
     }
 
     // **** ADD LIQUIDITY ****
@@ -234,17 +258,13 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
         address[] calldata path,
         address to,
         uint deadline,
-        address affiliateAddress,   //Address for our affiliate or white label
-        uint commission,  //commission set for the affiliate or by the white label dex admin
-        uint isWhiteLabel //put 0 if is affiliate, 1 if is white label
+        address affiliateAddress   //Address for our affiliate or white label
     ) external virtual override ensure(deadline) returns (uint[] memory amounts) {
-
-        require(commission >= 0, "commission must be positive");
         
         uint Reward;
 
         //If is an Affiliate
-        if ( isWhiteLabel == 0 ) {
+        if ( whiteLabelCommission[affiliateAddress] == 0 ) {
             //Check if the user not exist
             if( userExists[msg.sender] == address(0) ) {
                 //if the user not exist, check if AffiliateAddress not exist
@@ -261,13 +281,13 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
             }
             
             //Calculate Affiliate Reward
-            Reward = amountIn.mul(commission) / 10000;
+            Reward = amountIn.mul(affiliateCommission) / 10000;
             //Send Reward to the Affiliate
             TransferHelper.safeTransferFrom(path[0], msg.sender, userExists[msg.sender], Reward);
         } else {
             //if is white label, Send Reward to the WhiteLabel
             //Calculate WhiteLabel owner Reward
-            Reward = amountIn.mul(commission) / 10000;
+            Reward = amountIn.mul(whiteLabelCommission[affiliateAddress]) / 10000;
             //Send Reward to the WhiteLabel owner
             TransferHelper.safeTransferFrom(path[0], msg.sender, affiliateAddress, Reward);
         }
