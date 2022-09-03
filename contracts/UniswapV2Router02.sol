@@ -295,7 +295,7 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
         uint amountIn = amounts[0];
         uint reward = _affiliateAndWhiteLabel(affiliateAddress, amountIn, path[0]);
         
-        //Decrease amountIn by the amount of the applicate commissions
+        //Increase amountIn by the amount of the applicate commissions
         amountIn = amountIn + reward;
                 
 
@@ -343,7 +343,7 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
 
         uint reward = _affiliateAndWhiteLabel(affiliateAddress, amountIn, path[0]);
         
-        //Decrease amountIn by the amount of the applicate commissions
+        //Increase amountIn by the amount of the applicate commissions
         amountIn = amountIn + reward;
                 
 
@@ -396,7 +396,7 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
         
         uint reward = _affiliateAndWhiteLabel(affiliateAddress, amountIn, path[0]);
         
-        //Decrease amountIn by the amount of the applicate commissions
+        //Increase amountIn by the amount of the applicate commissions
         amountIn = amountIn + reward;
         
 
@@ -582,9 +582,7 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
 
 
     // **** LIBRARY FUNCTIONS ****
-    function quote(uint amountA, uint reserveA, uint reserveB, address affiliateAddress) public view virtual override returns (uint amountB) {
-        uint reward = _quoteReward(affiliateAddress, amountA);
-        amountA = amountA - reward;
+    function quote(uint amountA, uint reserveA, uint reserveB) public pure virtual override returns (uint amountB) {
         return UniswapV2Library.quote(amountA, reserveA, reserveB);
     }
 

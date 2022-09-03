@@ -180,7 +180,7 @@
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "pure",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -214,7 +214,7 @@
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "pure",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -291,11 +291,6 @@
 						"internalType": "uint256",
 						"name": "reserveB",
 						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "affiliateAddress",
-						"type": "address"
 					}
 				],
 				"name": "quote",
@@ -834,10 +829,10 @@
 	},
 	"sources": {
 		"bitlime-periphery/contracts/interfaces/IUniswapV2Router01.sol": {
-			"keccak256": "0x463403658c5077a2b4010b45525a5af94eefa3750a1267a521eeff9ae39cfe17",
+			"keccak256": "0x693010e26f5b7831ba42f853060987e30741628d6c8da6e16ac231386f40a3ea",
 			"urls": [
-				"bzz-raw://22ff369465d81505fd38a220a302da9538bad0bf5113fdf30386f05b6c3e74af",
-				"dweb:/ipfs/QmerZ9PuEkKQxZtwPBqQF43nZub8oeYby8GAVh9dYY7J5p"
+				"bzz-raw://667baefb3d515988a88cd8a08c8b6af3cb872f1e829129be54cf25216e3dd646",
+				"dweb:/ipfs/Qmb2T2rQbAs1cScZeMXCSmtf9Vowd898daDTbkJynHuBwo"
 			]
 		}
 	},

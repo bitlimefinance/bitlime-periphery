@@ -370,11 +370,6 @@
 						"internalType": "uint256",
 						"name": "reserveB",
 						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "affiliateAddress",
-						"type": "address"
 					}
 				],
 				"name": "quote",
@@ -385,7 +380,7 @@
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
+				"stateMutability": "pure",
 				"type": "function"
 			},
 			{
@@ -1250,10 +1245,10 @@
 			]
 		},
 		"bitlime-periphery/contracts/UniswapV2Router02.sol": {
-			"keccak256": "0x00b70eabfe8456c9533772eaa18d93d76710893fcde51ae8c2ddd481b955234f",
+			"keccak256": "0xcab3b2755f77109326c18212b73625a17eaa51b099769430e2f7fccf81026793",
 			"urls": [
-				"bzz-raw://7ceb15a77d943d585efdc83e782e74fc59c4c3f012c4b2884f55269c459e198b",
-				"dweb:/ipfs/QmUGj3X8KyUuqtYqCYftJ2e2TL8qPj6T1nZ4ULC9aQSTXE"
+				"bzz-raw://a771fc743add636774125c70bcbd7a4d88875a7ceb5de55911b9da6e92364414",
+				"dweb:/ipfs/QmUVd69S3P3DipPKtLS5B7g1uhfUrLHwcxDKuiTez9djN7"
 			]
 		},
 		"bitlime-periphery/contracts/interfaces/IERC20.sol": {
@@ -1264,10 +1259,10 @@
 			]
 		},
 		"bitlime-periphery/contracts/interfaces/IUniswapV2Router01.sol": {
-			"keccak256": "0xb6beaba8e233fbf408d4d62b31014a5b47adbf31aee425a0ad23c2e0ecd71268",
+			"keccak256": "0x693010e26f5b7831ba42f853060987e30741628d6c8da6e16ac231386f40a3ea",
 			"urls": [
-				"bzz-raw://c467cfc70e0f9e2ee8e8cdc796d5df995a87d995929b806835a1a37955defe9f",
-				"dweb:/ipfs/QmSky35gAnsMnECNseseygHfPsk8dxV96hVc47ZcacWyHE"
+				"bzz-raw://667baefb3d515988a88cd8a08c8b6af3cb872f1e829129be54cf25216e3dd646",
+				"dweb:/ipfs/Qmb2T2rQbAs1cScZeMXCSmtf9Vowd898daDTbkJynHuBwo"
 			]
 		},
 		"bitlime-periphery/contracts/interfaces/IUniswapV2Router02.sol": {
