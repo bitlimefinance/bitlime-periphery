@@ -231,6 +231,11 @@
 						"internalType": "uint256",
 						"name": "reserveOut",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "affiliateAddress",
+						"type": "address"
 					}
 				],
 				"name": "getAmountIn",
@@ -241,7 +246,7 @@
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "pure",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -260,6 +265,11 @@
 						"internalType": "uint256",
 						"name": "reserveOut",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "affiliateAddress",
+						"type": "address"
 					}
 				],
 				"name": "getAmountOut",
@@ -270,7 +280,7 @@
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "pure",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -284,6 +294,11 @@
 						"internalType": "address[]",
 						"name": "path",
 						"type": "address[]"
+					},
+					{
+						"internalType": "address",
+						"name": "affiliateAddress",
+						"type": "address"
 					}
 				],
 				"name": "getAmountsIn",
@@ -308,6 +323,11 @@
 						"internalType": "address[]",
 						"name": "path",
 						"type": "address[]"
+					},
+					{
+						"internalType": "address",
+						"name": "affiliateAddress",
+						"type": "address"
 					}
 				],
 				"name": "getAmountsOut",
@@ -350,6 +370,11 @@
 						"internalType": "uint256",
 						"name": "reserveB",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "affiliateAddress",
+						"type": "address"
 					}
 				],
 				"name": "quote",
@@ -360,7 +385,7 @@
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "pure",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -1225,10 +1250,10 @@
 			]
 		},
 		"bitlime-periphery/contracts/UniswapV2Router02.sol": {
-			"keccak256": "0xb9e80b96e3ea7c34cf7ba19ba6e8ab55027025a6ad255c4ff3d4296417599928",
+			"keccak256": "0x00b70eabfe8456c9533772eaa18d93d76710893fcde51ae8c2ddd481b955234f",
 			"urls": [
-				"bzz-raw://c84f915e2c26a34719024f01df5615c3e8f4495726243e94c4b3efa7984cf26a",
-				"dweb:/ipfs/QmPdbtDbiM2Qtv9PnnsfWLKfmMoTNJEGfNTYB5jG4HDtGr"
+				"bzz-raw://7ceb15a77d943d585efdc83e782e74fc59c4c3f012c4b2884f55269c459e198b",
+				"dweb:/ipfs/QmUGj3X8KyUuqtYqCYftJ2e2TL8qPj6T1nZ4ULC9aQSTXE"
 			]
 		},
 		"bitlime-periphery/contracts/interfaces/IERC20.sol": {
@@ -1239,10 +1264,10 @@
 			]
 		},
 		"bitlime-periphery/contracts/interfaces/IUniswapV2Router01.sol": {
-			"keccak256": "0xb4214787bf01a230c24af0b6bc207c306f22206c66f20c01a1dd50cac6d257dc",
+			"keccak256": "0xb6beaba8e233fbf408d4d62b31014a5b47adbf31aee425a0ad23c2e0ecd71268",
 			"urls": [
-				"bzz-raw://e823ddecf1b0e68bcfa19519e34770d2e003601d65db7ecb5094948b0bdc81da",
-				"dweb:/ipfs/QmQ2ZndM6P3xA3i3DpJfg5FXnpjRgLHvfi8Bv8NhUZeG1K"
+				"bzz-raw://c467cfc70e0f9e2ee8e8cdc796d5df995a87d995929b806835a1a37955defe9f",
+				"dweb:/ipfs/QmSky35gAnsMnECNseseygHfPsk8dxV96hVc47ZcacWyHE"
 			]
 		},
 		"bitlime-periphery/contracts/interfaces/IUniswapV2Router02.sol": {

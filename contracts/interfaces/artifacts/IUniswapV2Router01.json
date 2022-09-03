@@ -53,11 +53,11 @@
 			"addLiquidity(address,address,uint256,uint256,uint256,uint256,address,uint256)": "e8e33700",
 			"addLiquidityETH(address,uint256,uint256,uint256,address,uint256)": "f305d719",
 			"factory()": "c45a0155",
-			"getAmountIn(uint256,uint256,uint256)": "85f8c259",
-			"getAmountOut(uint256,uint256,uint256)": "054d50d4",
-			"getAmountsIn(uint256,address[])": "1f00ca74",
-			"getAmountsOut(uint256,address[])": "d06ca61f",
-			"quote(uint256,uint256,uint256)": "ad615dec",
+			"getAmountIn(uint256,uint256,uint256,address)": "9470dbea",
+			"getAmountOut(uint256,uint256,uint256,address)": "caced41b",
+			"getAmountsIn(uint256,address[],address)": "0c49bd13",
+			"getAmountsOut(uint256,address[],address)": "d2b364c6",
+			"quote(uint256,uint256,uint256,address)": "0caa3c62",
 			"removeLiquidity(address,address,uint256,uint256,uint256,address,uint256)": "baa2abde",
 			"removeLiquidityETH(address,uint256,uint256,uint256,address,uint256)": "02751cec",
 			"removeLiquidityETHWithPermit(address,uint256,uint256,uint256,address,uint256,bool,uint8,bytes32,bytes32)": "ded9382a",
@@ -231,6 +231,11 @@
 					"internalType": "uint256",
 					"name": "reserveOut",
 					"type": "uint256"
+				},
+				{
+					"internalType": "address",
+					"name": "affiliateAddress",
+					"type": "address"
 				}
 			],
 			"name": "getAmountIn",
@@ -260,6 +265,11 @@
 					"internalType": "uint256",
 					"name": "reserveOut",
 					"type": "uint256"
+				},
+				{
+					"internalType": "address",
+					"name": "affiliateAddress",
+					"type": "address"
 				}
 			],
 			"name": "getAmountOut",
@@ -284,6 +294,11 @@
 					"internalType": "address[]",
 					"name": "path",
 					"type": "address[]"
+				},
+				{
+					"internalType": "address",
+					"name": "affiliateAddress",
+					"type": "address"
 				}
 			],
 			"name": "getAmountsIn",
@@ -308,6 +323,11 @@
 					"internalType": "address[]",
 					"name": "path",
 					"type": "address[]"
+				},
+				{
+					"internalType": "address",
+					"name": "affiliateAddress",
+					"type": "address"
 				}
 			],
 			"name": "getAmountsOut",
@@ -337,6 +357,11 @@
 					"internalType": "uint256",
 					"name": "reserveB",
 					"type": "uint256"
+				},
+				{
+					"internalType": "address",
+					"name": "affiliateAddress",
+					"type": "address"
 				}
 			],
 			"name": "quote",

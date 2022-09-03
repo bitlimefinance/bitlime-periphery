@@ -165,6 +165,11 @@
 						"internalType": "uint256",
 						"name": "reserveOut",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "affiliateAddress",
+						"type": "address"
 					}
 				],
 				"name": "getAmountIn",
@@ -194,6 +199,11 @@
 						"internalType": "uint256",
 						"name": "reserveOut",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "affiliateAddress",
+						"type": "address"
 					}
 				],
 				"name": "getAmountOut",
@@ -218,6 +228,11 @@
 						"internalType": "address[]",
 						"name": "path",
 						"type": "address[]"
+					},
+					{
+						"internalType": "address",
+						"name": "affiliateAddress",
+						"type": "address"
 					}
 				],
 				"name": "getAmountsIn",
@@ -242,6 +257,11 @@
 						"internalType": "address[]",
 						"name": "path",
 						"type": "address[]"
+					},
+					{
+						"internalType": "address",
+						"name": "affiliateAddress",
+						"type": "address"
 					}
 				],
 				"name": "getAmountsOut",
@@ -271,6 +291,11 @@
 						"internalType": "uint256",
 						"name": "reserveB",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "affiliateAddress",
+						"type": "address"
 					}
 				],
 				"name": "quote",
@@ -809,10 +834,10 @@
 	},
 	"sources": {
 		"bitlime-periphery/contracts/interfaces/IUniswapV2Router01.sol": {
-			"keccak256": "0xb4214787bf01a230c24af0b6bc207c306f22206c66f20c01a1dd50cac6d257dc",
+			"keccak256": "0x463403658c5077a2b4010b45525a5af94eefa3750a1267a521eeff9ae39cfe17",
 			"urls": [
-				"bzz-raw://e823ddecf1b0e68bcfa19519e34770d2e003601d65db7ecb5094948b0bdc81da",
-				"dweb:/ipfs/QmQ2ZndM6P3xA3i3DpJfg5FXnpjRgLHvfi8Bv8NhUZeG1K"
+				"bzz-raw://22ff369465d81505fd38a220a302da9538bad0bf5113fdf30386f05b6c3e74af",
+				"dweb:/ipfs/QmerZ9PuEkKQxZtwPBqQF43nZub8oeYby8GAVh9dYY7J5p"
 			]
 		}
 	},
