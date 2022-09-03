@@ -620,7 +620,8 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
     {
         uint reward = _quoteReward(affiliateAddress, amountIn);
         amountIn = amountIn - reward;
-        return UniswapV2Library.getAmountsOut(factory, amountIn, path);
+        amounts = UniswapV2Library.getAmountsOut(factory, amountIn, path);
+        amounts[0] = amountIn + reward;
     }
 
     function getAmountsIn(uint amountOut, address[] memory path, address affiliateAddress)

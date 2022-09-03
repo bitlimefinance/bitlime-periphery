@@ -1245,10 +1245,10 @@
 			]
 		},
 		"bitlime-periphery/contracts/UniswapV2Router02.sol": {
-			"keccak256": "0xcab3b2755f77109326c18212b73625a17eaa51b099769430e2f7fccf81026793",
+			"keccak256": "0x597c526122081083b4c78b58d8e4d85133197947051f90a3b981a4753961081c",
 			"urls": [
-				"bzz-raw://a771fc743add636774125c70bcbd7a4d88875a7ceb5de55911b9da6e92364414",
-				"dweb:/ipfs/QmUVd69S3P3DipPKtLS5B7g1uhfUrLHwcxDKuiTez9djN7"
+				"bzz-raw://2affc6237df54bddad29934d6ad768f17a06a1462dc8f7c08032a584af333258",
+				"dweb:/ipfs/QmSpM8FFF84MKL7GU9ANF35zfSXMAemrwHcxjVXHQ5TPpK"
 			]
 		},
 		"bitlime-periphery/contracts/interfaces/IERC20.sol": {
