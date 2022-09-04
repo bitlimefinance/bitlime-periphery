@@ -280,7 +280,7 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
             path[0], msg.sender, UniswapV2Library.pairFor(factory, path[0], path[1]), amounts[0]
         );
         _swap(amounts, path, to);
-        
+        amounts[0] = amountIn + reward; //reset correct amountIn for return
     }
     function swapTokensForExactTokens(
         uint amountOut,
@@ -328,6 +328,8 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
         IWETH(WETH).deposit{value: amounts[0]}();
         assert(IWETH(WETH).transfer(UniswapV2Library.pairFor(factory, path[0], path[1]), amounts[0]));
         _swap(amounts, path, to);
+
+        amounts[0] = amountIn + reward; //reset correct amountIn for return
     }
     function swapTokensForExactETH(uint amountOut, uint amountInMax, address[] calldata path, address to, uint deadline, address affiliateAddress)
         external
@@ -380,6 +382,8 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
         _swap(amounts, path, address(this));
         IWETH(WETH).withdraw(amounts[amounts.length - 1]);
         TransferHelper.safeTransferETH(to, amounts[amounts.length - 1]);
+
+        amounts[0] = amountIn + reward; //reset correct amountIn for return
     }
     function swapETHForExactTokens(uint amountOut, address[] calldata path, address to, uint deadline, address affiliateAddress)
         external
@@ -621,7 +625,7 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
         uint reward = _quoteReward(affiliateAddress, amountIn);
         amountIn = amountIn - reward;
         amounts = UniswapV2Library.getAmountsOut(factory, amountIn, path);
-        //amounts[0] = amountIn + reward; Not return the original amountIn
+        amounts[0] = amountIn + reward; //reset correct amountIn for return
     }
 
     function getAmountsIn(uint amountOut, address[] memory path, address affiliateAddress)
