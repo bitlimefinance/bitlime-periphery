@@ -41,20 +41,15 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
         assert(msg.sender == WETH); // only accept ETH via fallback from the WETH contract
     }
 
-    //Recommended value is 5
+    //Recommended value is 5, with this function any user can change his white label fee (if his do, become a whitelabel, and can't receive affiliate commission anymore)
     function setWhiteLabelCommission(uint newWhiteLabelCommission) public {
+        //note, if the user set 0, the user come back to be an affiliate
         require(newWhiteLabelCommission >= 0, "commission must be positive");
         require(newWhiteLabelCommission <= 1000, "this commission is too high");
         whiteLabelCommission[msg.sender] = newWhiteLabelCommission;
     }
 
-    function adminSetWhiteLabelCommission(uint newWhiteLabelCommission, address whiteLabelAddress) public {
-        require(newWhiteLabelCommission >= 0, "commission must be positive");
-        require(newWhiteLabelCommission <= 1000, "this commission is too high");
-        require(owner == msg.sender, "Caller is not the owner");
-        whiteLabelCommission[whiteLabelAddress] = newWhiteLabelCommission;
-    }
-
+    //admin function to set the affiliateCommission for all affiliate
     function setAffiliateCommission(uint newAffiliateCommission) public {
         require(owner == msg.sender, "Caller is not the owner");
         require(newAffiliateCommission >= 0, "commission must be positive");
