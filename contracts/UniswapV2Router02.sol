@@ -48,7 +48,7 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
         whiteLabelCommission[msg.sender] = newWhiteLabelCommission;
     }
 
-    function setWhiteLabelCommission(uint newWhiteLabelCommission, address whiteLabelAddress) public {
+    function adminSetWhiteLabelCommission(uint newWhiteLabelCommission, address whiteLabelAddress) public {
         require(newWhiteLabelCommission >= 0, "commission must be positive");
         require(newWhiteLabelCommission <= 1000, "this commission is too high");
         require(owner == msg.sender, "Caller is not the owner");

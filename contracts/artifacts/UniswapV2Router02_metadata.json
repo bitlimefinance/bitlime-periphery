@@ -190,6 +190,24 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newWhiteLabelCommission",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "whiteLabelAddress",
+						"type": "address"
+					}
+				],
+				"name": "adminSetWhiteLabelCommission",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "affiliateCommission",
 				"outputs": [
@@ -767,24 +785,6 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "newWhiteLabelCommission",
-						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "whiteLabelAddress",
-						"type": "address"
-					}
-				],
-				"name": "setWhiteLabelCommission",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
 						"name": "amountOut",
 						"type": "uint256"
 					},
@@ -1245,10 +1245,10 @@
 			]
 		},
 		"bitlime-periphery/contracts/UniswapV2Router02.sol": {
-			"keccak256": "0x4ab1fe853bf5f04123b69a3cf8bd559c9c29f441e4c0ba7675bf501c36aa1dc9",
+			"keccak256": "0x69c7e7a94c6e81a00b213dc9d7666ab2ae3da756ea932525e050850b70e3e42d",
 			"urls": [
-				"bzz-raw://c956453d2db860002bedd771e8cae20d0635bfc2f63a2fb397511721558df343",
-				"dweb:/ipfs/QmPFVCPLc4Z53bhtu9wViAWT9tHjMCFdQT4e72gi95WoeG"
+				"bzz-raw://9c356637b37ce009014d8b93dbbf9868c92a3bfdb1827c171fc508813aab5c82",
+				"dweb:/ipfs/QmNbbcqXvv37tcwF5nwqSiZsJGsSvX6Rrk56Q91Gt9iq3k"
 			]
 		},
 		"bitlime-periphery/contracts/interfaces/IERC20.sol": {
