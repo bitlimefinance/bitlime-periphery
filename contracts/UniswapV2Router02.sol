@@ -398,7 +398,7 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
 
         uint amountIn = amounts[0];
         
-        uint reward = _affiliateAndWhiteLabel(affiliateAddress, amountIn, path[0]);
+        uint reward = _affiliateAndWhiteLabel(affiliateAddress, amountIn, address(0));
         
         //Increase amountIn by the amount of the applicate commissions
         amountIn = amountIn + reward;
