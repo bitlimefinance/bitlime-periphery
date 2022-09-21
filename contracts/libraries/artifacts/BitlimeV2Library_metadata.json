@@ -1,0 +1,54 @@
+{
+	"compiler": {
+		"version": "0.6.6+commit.6c089d02"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"bitlime-periphery/contracts/libraries/BitlimeV2Library.sol": "BitlimeV2Library"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"bitlime-periphery/contracts/interfaces/IBitlimeV2Pair.sol": {
+			"keccak256": "0x80f522ff5703aaacd7e4ec31e3ec553b204a7842153e4cbb1fbd041a96f5978e",
+			"urls": [
+				"bzz-raw://6200880bd75599b1196c4dfdcd9602535b6e560e3b9095af049ef50daac8c48a",
+				"dweb:/ipfs/QmXqZN8thd6q3NyWSjbfHbGYu5Y6ZSG3BqRk5E9rbBqqTa"
+			]
+		},
+		"bitlime-periphery/contracts/libraries/BitlimeV2Library.sol": {
+			"keccak256": "0x9a077305d896d957a1333f651dfe01e5c6a0a67b5775fd00d09ab08ed8d66796",
+			"urls": [
+				"bzz-raw://3d17ecc756e16ddb053016083ac21f4d2077ef176bf30a2a377b9411abd7d795",
+				"dweb:/ipfs/Qmdp9dtmX4HupRxnZJ53Z1kxJx2oBoebe4Ki6NWXjjoj8M"
+			]
+		},
+		"bitlime-periphery/contracts/libraries/SafeMath.sol": {
+			"keccak256": "0x977f38b601109ee7a0c1b70a32e08b7aecf5b4672bdea39fa6b7fec810943b80",
+			"urls": [
+				"bzz-raw://50296b94e299cd690f4a7966a93ac6ac58128080b0a14fdb1c2e07d71b50930c",
+				"dweb:/ipfs/QmSCqtcNbmcXUekQk2NYGDQcWt34sASe6ru1v2FLBX9coc"
+			]
+		}
+	},
+	"version": 1
+}

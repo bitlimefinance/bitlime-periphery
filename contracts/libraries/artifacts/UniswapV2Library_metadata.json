@@ -14,7 +14,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"bitlime-periphery/contracts/libraries/UniswapV2Library.sol": "UniswapV2Library"
+			"bitlime-periphery/contracts/libraries/BitlimeV2Library.sol": "UniswapV2Library"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -22,7 +22,7 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": true,
+			"enabled": false,
 			"runs": 200
 		},
 		"remappings": []
@@ -35,18 +35,18 @@
 				"dweb:/ipfs/QmayKQWJgWmr46DqWseADyUanmqxh662hPNdAkdHRjiQQH"
 			]
 		},
+		"bitlime-periphery/contracts/libraries/BitlimeV2Library.sol": {
+			"keccak256": "0x3f63c811ce4b77b48298f421b88f744457028816af881e504d019a774b279d1a",
+			"urls": [
+				"bzz-raw://63893b7cc991565afed51a420a3826ffd8d623fcb73356b10a14a2eeff8c72a7",
+				"dweb:/ipfs/Qmc9jaQMd7eDtafQVY9tqVY1pQiC8Y7V6dN7ZXSCvq7b69"
+			]
+		},
 		"bitlime-periphery/contracts/libraries/SafeMath.sol": {
 			"keccak256": "0x977f38b601109ee7a0c1b70a32e08b7aecf5b4672bdea39fa6b7fec810943b80",
 			"urls": [
 				"bzz-raw://50296b94e299cd690f4a7966a93ac6ac58128080b0a14fdb1c2e07d71b50930c",
 				"dweb:/ipfs/QmSCqtcNbmcXUekQk2NYGDQcWt34sASe6ru1v2FLBX9coc"
-			]
-		},
-		"bitlime-periphery/contracts/libraries/UniswapV2Library.sol": {
-			"keccak256": "0xc4008a05a44496a9e42ac8ea35525b5b7ce5ec7cf45bdc5cf9092b938bd945c8",
-			"urls": [
-				"bzz-raw://20caf2f374f57631c2cb51fdcdf15c417e726c173b6a3de8e1b67872d56dca83",
-				"dweb:/ipfs/QmTYCn8sJDBoN8wwzzGFsxvGVnfhoRkWhHqQHHiM4kinLw"
 			]
 		}
 	},
