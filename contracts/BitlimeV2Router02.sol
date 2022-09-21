@@ -420,7 +420,7 @@ contract BitlimeV2Router02 is IBitlimeV2Router02 {
             (uint reserve0, uint reserve1,) = pair.getReserves();
             (uint reserveInput, uint reserveOutput) = input == token0 ? (reserve0, reserve1) : (reserve1, reserve0);
             amountInput = IERC20(input).balanceOf(address(pair)).sub(reserveInput);
-            amountOutput = BitlimeV2Library.getAmountOut(amountInput, reserveInput, reserveOutput);
+            amountOutput = BitlimeV2Library.getAmountOut(amountInput, reserveInput, reserveOutput, factory);
             }
             (uint amount0Out, uint amount1Out) = input == token0 ? (uint(0), amountOutput) : (amountOutput, uint(0));
             address to = i < path.length - 2 ? BitlimeV2Library.pairFor(factory, output, path[i + 2]) : _to;
@@ -594,7 +594,7 @@ contract BitlimeV2Router02 is IBitlimeV2Router02 {
     {
         uint reward = _quoteReward(affiliateAddress, amountIn);
         amountIn = amountIn - reward;
-        return BitlimeV2Library.getAmountOut(amountIn, reserveIn, reserveOut);
+        return BitlimeV2Library.getAmountOut(amountIn, reserveIn, reserveOut, factory);
     }
 
     function getAmountIn(uint amountOut, uint reserveIn, uint reserveOut, address affiliateAddress)
@@ -604,7 +604,7 @@ contract BitlimeV2Router02 is IBitlimeV2Router02 {
         override
         returns (uint amountIn)
     {
-        amountIn = BitlimeV2Library.getAmountIn(amountOut, reserveIn, reserveOut);
+        amountIn = BitlimeV2Library.getAmountIn(amountOut, reserveIn, reserveOut, factory);
         uint reward = _quoteReward(affiliateAddress, amountIn);
         amountIn = amountIn + reward;
         return amountIn;

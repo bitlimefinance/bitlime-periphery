@@ -2,7 +2,7 @@ pragma solidity >=0.5.0;
 
 import '../interfaces/IBitlimeV2Pair.sol';
 
-
+import "../interfaces/IBitlimeV2Factory.sol";
 import "./SafeMath.sol";
 
 //interface SmallIBitlimeV2Factory {
@@ -29,7 +29,7 @@ library BitlimeV2Library {
                 hex'ff',
                 factory,
                 keccak256(abi.encodePacked(token0, token1)),
-                hex'667c3a9d813ca01203b2b6622e4b12636376ec0ef520396ae4619bbfb208f3db' // init code hash
+                hex'db90c1d9841e895d1d54c09f39cc04b67322f8dfb636f13d1eaf617b11c30347' // init code hash
             ))));
     }
 
@@ -49,21 +49,21 @@ library BitlimeV2Library {
     }
 
     // given an input amount of an asset and pair reserves, returns the maximum output amount of the other asset
-    function getAmountOut(uint amountIn, uint reserveIn, uint reserveOut) internal pure returns (uint amountOut) {
+    function getAmountOut(uint amountIn, uint reserveIn, uint reserveOut, address factory) internal view returns (uint amountOut) {
         require(amountIn > 0, 'BitlimeV2Library: INSUFFICIENT_INPUT_AMOUNT');
         require(reserveIn > 0 && reserveOut > 0, 'BitlimeV2Library: INSUFFICIENT_LIQUIDITY');
-        uint amountInWithFee = amountIn.mul(9975);
+        uint amountInWithFee = amountIn.mul(10000-IBitlimeV2Factory(factory).fee());
         uint numerator = amountInWithFee.mul(reserveOut);
         uint denominator = reserveIn.mul(10000).add(amountInWithFee);
         amountOut = numerator / denominator;
     }
 
     // given an output amount of an asset and pair reserves, returns a required input amount of the other asset
-    function getAmountIn(uint amountOut, uint reserveIn, uint reserveOut) internal pure returns (uint amountIn) {
+    function getAmountIn(uint amountOut, uint reserveIn, uint reserveOut, address factory) internal view returns (uint amountIn) {
         require(amountOut > 0, 'BitlimeV2Library: INSUFFICIENT_OUTPUT_AMOUNT');
         require(reserveIn > 0 && reserveOut > 0, 'BitlimeV2Library: INSUFFICIENT_LIQUIDITY');
         uint numerator = reserveIn.mul(amountOut).mul(10000);
-        uint denominator = reserveOut.sub(amountOut).mul(9975);
+        uint denominator = reserveOut.sub(amountOut).mul(10000-IBitlimeV2Factory(factory).fee());
         amountIn = (numerator / denominator).add(1);
     }
 
@@ -74,7 +74,7 @@ library BitlimeV2Library {
         amounts[0] = amountIn;
         for (uint i; i < path.length - 1; i++) {
             (uint reserveIn, uint reserveOut,) = getReserves(factory, path[i], path[i + 1]);
-            amounts[i + 1] = getAmountOut(amounts[i], reserveIn, reserveOut);
+            amounts[i + 1] = getAmountOut(amounts[i], reserveIn, reserveOut, factory);
         }
     }
 
@@ -85,7 +85,7 @@ library BitlimeV2Library {
         amounts[amounts.length - 1] = amountOut;
         for (uint i = path.length - 1; i > 0; i--) {
             (uint reserveIn, uint reserveOut,) = getReserves(factory, path[i - 1], path[i]);
-            amounts[i - 1] = getAmountIn(amounts[i], reserveIn, reserveOut);
+            amounts[i - 1] = getAmountIn(amounts[i], reserveIn, reserveOut, factory);
         }
     }
 }
