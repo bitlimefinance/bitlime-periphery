@@ -1206,10 +1206,10 @@
 	},
 	"sources": {
 		"bitlime-periphery/contracts/BitlimeV2Router02.sol": {
-			"keccak256": "0x86cada9e37def801f809fc4192b21acc5ad50a254b3d732ae6b2bd6d2f4da582",
+			"keccak256": "0x96cad82c7126170239cc988cafbf2363cd316520f4e0bcbcb45173869dfcd67d",
 			"urls": [
-				"bzz-raw://b94e1b7959b6579909e658fd6c4cca15a7e4a97c87fb63cf36ca4aa5711467a8",
-				"dweb:/ipfs/QmTT1ZdYuiWK6sXc3TGC9tiBgPNcGs1bvaabXVL8mYnj99"
+				"bzz-raw://febee79a74bcec5289621ef3a7724526e7bace9e38929ef16c80fd5cf61f28dc",
+				"dweb:/ipfs/QmUU8zLgKX6VSbWCX2b9AerqxFUeWVK9wkozayeJtVZZwe"
 			]
 		},
 		"bitlime-periphery/contracts/interfaces/IBitlimeV2Factory.sol": {
@@ -1255,10 +1255,10 @@
 			]
 		},
 		"bitlime-periphery/contracts/libraries/BitlimeV2Library.sol": {
-			"keccak256": "0x9850394b5e2a2c290274af835990255f458aa4694ba0a1c361506a2aefd4ff5b",
+			"keccak256": "0xd95621e192fed4d41121c1da326622c03c30f1c5fb4d1d1ed1562a7be6a0b5b8",
 			"urls": [
-				"bzz-raw://6158c587074504b7705ba4d107b5a3deb011d5b8717d6d8e90695f34c36c0ced",
-				"dweb:/ipfs/Qmf9Y7aDur8iUzmsc2AcSLwcRtRbhCBbt4YMF5ZCMWWhYA"
+				"bzz-raw://81d0720065e82a60b0ebe1109edf36bf32a13432883d42cabc82ad393836f037",
+				"dweb:/ipfs/QmYNXwPotPLtR3TfBJsD5U7u52HQYFitBuYTnf2YHcxkQc"
 			]
 		},
 		"bitlime-periphery/contracts/libraries/SafeMath.sol": {

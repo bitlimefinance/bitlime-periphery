@@ -43,10 +43,10 @@
 			]
 		},
 		"bitlime-periphery/contracts/libraries/BitlimeV2Library.sol": {
-			"keccak256": "0x9850394b5e2a2c290274af835990255f458aa4694ba0a1c361506a2aefd4ff5b",
+			"keccak256": "0xd95621e192fed4d41121c1da326622c03c30f1c5fb4d1d1ed1562a7be6a0b5b8",
 			"urls": [
-				"bzz-raw://6158c587074504b7705ba4d107b5a3deb011d5b8717d6d8e90695f34c36c0ced",
-				"dweb:/ipfs/Qmf9Y7aDur8iUzmsc2AcSLwcRtRbhCBbt4YMF5ZCMWWhYA"
+				"bzz-raw://81d0720065e82a60b0ebe1109edf36bf32a13432883d42cabc82ad393836f037",
+				"dweb:/ipfs/QmYNXwPotPLtR3TfBJsD5U7u52HQYFitBuYTnf2YHcxkQc"
 			]
 		},
 		"bitlime-periphery/contracts/libraries/SafeMath.sol": {

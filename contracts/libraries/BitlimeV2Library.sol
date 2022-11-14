@@ -29,7 +29,7 @@ library BitlimeV2Library {
                 hex'ff',
                 factory,
                 keccak256(abi.encodePacked(token0, token1)),
-                hex'db90c1d9841e895d1d54c09f39cc04b67322f8dfb636f13d1eaf617b11c30347' // init code hash
+                hex'944eb2b14015033792e1ba7f7968118c4662629445936ae308dab28021844f28' // init code hash
             ))));
     }
 

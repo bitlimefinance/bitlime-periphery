@@ -17,6 +17,8 @@ contract BitlimeV2Router02 is IBitlimeV2Router02 {
     uint public affiliateCommission; //commission set for the affiliate
     mapping(address => uint) public whiteLabelCommission; //commission set by the white label dex admin
 
+    //mapping(address => mapping(address => uint)) public affiliateRanking; //mapping for save coin the coins earned by each affiliate
+    //address[] affiliateArray; //this contain an array with the list of affiliates, until now
 
     using SafeMath for uint;
 

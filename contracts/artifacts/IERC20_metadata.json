@@ -88,7 +88,7 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "amount",
+						"name": "value",
 						"type": "uint256"
 					}
 				],
@@ -107,7 +107,7 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "account",
+						"name": "owner",
 						"type": "address"
 					}
 				],
@@ -117,6 +117,45 @@
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "decimals",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
 					}
 				],
 				"stateMutability": "view",
@@ -139,12 +178,12 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "recipient",
+						"name": "to",
 						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "amount",
+						"name": "value",
 						"type": "uint256"
 					}
 				],
@@ -163,17 +202,17 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "sender",
+						"name": "from",
 						"type": "address"
 					},
 					{
 						"internalType": "address",
-						"name": "recipient",
+						"name": "to",
 						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "amount",
+						"name": "value",
 						"type": "uint256"
 					}
 				],
@@ -190,23 +229,7 @@
 			}
 		],
 		"devdoc": {
-			"methods": {
-				"allowance(address,address)": {
-					"details": "Returns the remaining number of tokens that `spender` will be allowed to spend on behalf of `owner` through {transferFrom}. This is zero by default.      * This value changes when {approve} or {transferFrom} are called."
-				},
-				"approve(address,uint256)": {
-					"details": "Sets `amount` as the allowance of `spender` over the caller's tokens.      * Returns a boolean value indicating whether the operation succeeded.      * IMPORTANT: Beware that changing an allowance with this method brings the risk that someone may use both the old and the new allowance by unfortunate transaction ordering. One possible solution to mitigate this race condition is to first reduce the spender's allowance to 0 and set the desired value afterwards: https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729      * Emits an {Approval} event."
-				},
-				"balanceOf(address)": {
-					"details": "Returns the amount of tokens owned by `account`."
-				},
-				"transfer(address,uint256)": {
-					"details": "Moves `amount` tokens from the caller's account to `recipient`.      * Returns a boolean value indicating whether the operation succeeded.      * Emits a {Transfer} event."
-				},
-				"transferFrom(address,address,uint256)": {
-					"details": "Moves `amount` tokens from `sender` to `recipient` using the allowance mechanism. `amount` is then deducted from the caller's allowance.      * Returns a boolean value indicating whether the operation succeeded.      * Emits a {Transfer} event."
-				}
-			}
+			"methods": {}
 		},
 		"userdoc": {
 			"methods": {}
@@ -214,7 +237,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"bitlime-periphery/contracts/Safemoon.sol": "IERC20"
+			"bitlime-periphery/contracts/BitlimeV2Router02_flat.sol": "IERC20"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -228,11 +251,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"bitlime-periphery/contracts/Safemoon.sol": {
-			"keccak256": "0x04ba7af2ef9bd76ad89c8268ab226cd0c077aca3364d3b896fc193f4421a923c",
+		"bitlime-periphery/contracts/BitlimeV2Router02_flat.sol": {
+			"keccak256": "0x5e53459cd5145d44fff077d8caeda0692e78b677c57b8a8798f9f2d1fe6c0cf9",
 			"urls": [
-				"bzz-raw://d926572e07165c852023e15c17913891e7700a5360e9493617f88eeb2cf61b37",
-				"dweb:/ipfs/QmeZvifqG8EPqqjr5cwpCiRxGtFDEiWpZQjaH4ph65ajKD"
+				"bzz-raw://0b1928666e57ddcf981ca561da9a77208b65c0215780edc403739d029636f43b",
+				"dweb:/ipfs/QmX1sKQekNR3MfNrgJS1W2V3QuUhHAkuyt3vT1rdUVg22k"
 			]
 		}
 	},
